@@ -1,0 +1,32 @@
+
+<div *ngIf="showdialog">
+
+
+<h2 mat-dialog-title>Product Details</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Title</h3>
+  <p>{{productdetails?.title}}</p>
+
+  <h3>description</h3>
+  <p>{{productdetails?.description}}</p>
+
+  <h3>price</h3>
+  <p>{{productdetails?.price}}</p>
+
+  <h3>category</h3>
+  <p>{{productdetails?.category}}</p>
+
+  <h3>image</h3>
+  <div>
+    <img [src]="productdetails?.image" width="100" height="100"/>
+  </div>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+</mat-dialog-actions>
+
+</div>

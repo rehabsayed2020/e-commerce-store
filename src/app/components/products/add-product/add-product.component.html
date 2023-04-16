@@ -1,0 +1,79 @@
+
+<div class="alert alert-success" role="alert" *ngIf="sucess">
+  The process was successful
+</div>
+
+<div class="dialog">
+  <div mat-dialog-actions style="float: right;">
+    <button mat-button (click)="onNoClick()">
+      <span class="material-icons">
+        clear
+      </span>
+    </button>
+  </div>
+
+  <div class="dialog__header">
+    <div class="title">
+      <h4>Add new product</h4>
+    </div>
+  </div>
+  <form class="example-form" [formGroup]="creatNewProduct" (submit)="onSubmit()">
+
+
+    <mat-form-field>
+      <mat-label>title</mat-label>
+      <input matInput formControlName="title" [errorStateMatcher]="matcher" placeholder="enter title">
+      <mat-error *ngIf="creatNewProduct.controls['title'].hasError('required')">
+        title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="float: right;">
+      <mat-label>price</mat-label>
+      <input matInput formControlName="price" [errorStateMatcher]="matcher" placeholder="enter price">
+      <mat-error *ngIf="creatNewProduct.controls['price'].hasError('required')">
+        price is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>description </mat-label>
+      <input matInput formControlName="description" [errorStateMatcher]="matcher" placeholder="enter store description">
+      <mat-error *ngIf="creatNewProduct.controls['description'].hasError('required')">
+        description  is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-label>category</mat-label>
+      <input matInput formControlName="category" [errorStateMatcher]="matcher" placeholder="enter category">
+      <mat-error *ngIf="creatNewProduct.controls['category'].hasError('required')">
+        category is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+
+
+
+
+
+    <!-- <div>
+      <mat-label>Image</mat-label><br>
+        <input formControlName="image" type="file" (change)="postMethod($any($event.target).files)"/>
+    </div> -->
+<br/>
+
+    <div class="example-button-row" style="text-align: right; margin-top: 25px; width: 100%;">
+      <button type="submit" mat-raised-button color="primary" >
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw loading" ></i>
+        Save</button>
+      <!-- <button mat-raised-button color="warn" (click)="clearformvalue()">Clear</button> -->
+    </div>
+
+  </form>
+
+</div>
+
